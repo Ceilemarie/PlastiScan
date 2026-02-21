@@ -32,23 +32,7 @@ body {
   padding: 20px 40px;
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
 }
-.homeTitle {
-  color:azure;
-  text-align: center;
-  font-size: 95px;
-  padding: 180px 20px 100px;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.oneliner {
-  color:azure;
-  text-align: center;
-  font-size: 25px;
-  padding: 0px 20px;
-  margin-top: -120px;
-}
+
 
 .navbar ul {
   list-style: none; 
@@ -86,11 +70,55 @@ section {
   align-items: center;
 }
 
+#home{
+  color:azure;
+  text-align: center;
+  font-size: 95px;
+  padding: 180px 20px 100px;
+  min-height: 130vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: -200px;
+}
+.oneliner {
+  color:azure;
+  text-align: center;
+  font-size: 25px;
+  padding: 0px 20px;
+  margin-top: -120px;
+}
+
 #about {
   background-color: #ffffff;
   text-align: justify;
   color: #597d35;
 }
+#about h2{
+  margin-top: -60px;
+  font-size: 90px;
+}
+#about p {
+  font-size: 30px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 15px;
+  padding: 50px 80px;
+  color: #2e7d32;
+  max-width: 1100px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}
+
+#about p:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.3);
+  background: rgba(255, 255, 255, 0.25);
+}
+
 
 #goal {
   background-color: #337138;
@@ -102,6 +130,53 @@ section {
   background-color: #e8f5e9;
   text-align: justify;
   color: #2e7d32;
+}
+#instructions ol {
+  list-style: none;
+  padding: 0;
+  counter-reset: step-counter;
+  width: 100%;
+  max-width: 900px;
+}
+
+#instructions li {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 15px;
+  padding: 25px 30px 25px 70px;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+  position: relative;
+  counter-increment: step-counter;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+}
+
+#instructions li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.3);
+  background: rgba(255, 255, 255, 0.25);
+}
+
+#instructions li::before {
+  content: counter(step-counter);
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(46, 125, 50, 0.9);
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 18px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 #reward {
@@ -124,3 +199,5 @@ section p, section ol {
 section ol {
   text-align: left;
 }
+
+
