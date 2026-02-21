@@ -81,12 +81,17 @@ section {
   justify-content: center;
   margin-top: -200px;
 }
+
+#home h1 {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 210px;
+}
 .oneliner {
   color:azure;
   text-align: center;
   font-size: 25px;
   padding: 0px 20px;
-  margin-top: -120px;
+  margin-top: -89px;
 }
 
 #about {
@@ -271,8 +276,6 @@ section {
   text-align: center;
   
 }
-
-
 #reward .reward-container {
   display: flex;
   justify-content: center;
