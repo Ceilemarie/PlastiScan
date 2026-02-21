@@ -27,7 +27,7 @@ body {
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 15px;
-  max-width: calc(90% - 40px); /* Full width minus margins */
+  max-width: calc(90% - 40px); 
   margin: 0 auto;
   padding: 20px 40px;
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -96,7 +96,7 @@ section {
 }
 #about h2{
   margin-top: -60px;
-  font-size: 90px;
+  font-size: 80px;
 }
 #about p {
   font-size: 30px;
@@ -118,12 +118,32 @@ section {
   box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.3);
   background: rgba(255, 255, 255, 0.25);
 }
-
-
 #goal {
   background-color: #337138;
   text-align: justify;
   color: #ffffff;
+}
+#goal h2{
+  margin-top: -60px;
+  font-size: 80px;
+}
+#goal p {
+  font-size: 30px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 15px;
+  padding: 50px 80px;
+  color: #e8f5e9;
+  max-width: 1100px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+#goal p:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.3);
+  background: rgba(255, 255, 255, 0.25);
 }
 
 #instructions {
@@ -131,12 +151,22 @@ section {
   text-align: justify;
   color: #2e7d32;
 }
+#instructions h2{
+  margin-top: -60px;
+  font-size: 80px;
+}
+#instructions p {
+  font-size: 30px;
+  color: #2e7d32;
+  margin-top: -20px;
+ 
+}
 #instructions ol {
   list-style: none;
   padding: 0;
   counter-reset: step-counter;
   width: 100%;
-  max-width: 900px;
+  max-width: 1300px;
 }
 
 #instructions li {
@@ -145,7 +175,7 @@ section {
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 15px;
-  padding: 25px 30px 25px 70px;
+  padding: 30px 50px 30px 80px;
   margin-bottom: 20px;
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
   position: relative;
@@ -154,8 +184,53 @@ section {
   text-align: left;
 }
 
+/* Staircase with aligned right edge */
+#instructions li:nth-child(1) { 
+  margin-left: 0px; 
+  max-width: 100%;
+}
+#instructions li:nth-child(2) { 
+  margin-left: 60px; 
+  max-width: calc(100% - 60px);
+}
+#instructions li:nth-child(3) { 
+  margin-left: 120px; 
+  max-width: calc(100% - 120px);
+}
+#instructions li:nth-child(4) { 
+  margin-left: 180px; 
+  max-width: calc(100% - 180px);
+}
+#instructions li:nth-child(5) { 
+  margin-left: 240px; 
+  max-width: calc(100% - 240px);
+}
+#instructions li:nth-child(6) { 
+  margin-left: 300px; 
+  max-width: calc(100% - 300px);
+}
+
+/*slide animations for staircase */
+#instructions li {
+  opacity: 0;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+#instructions li:nth-child(odd) {
+  transform: translateX(-100px);
+}
+
+#instructions li:nth-child(even) {
+  transform: translateX(100px);
+}
+
+#instructions li.visible {
+  opacity: 1;
+  transform: translateX(0) !important;
+}
+
 #instructions li:hover {
-  transform: translateY(-5px);
+  transform: translateY(-5px) !important;
   box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.3);
   background: rgba(255, 255, 255, 0.25);
 }
@@ -181,8 +256,84 @@ section {
 
 #reward {
   background-color: #597d35;
-  text-align: justify;
+  text-align: center;
   color: azure;
+}
+#reward h2{
+  margin-top: -60px;
+  font-size: 80px;
+}
+
+#reward .reward-intro {
+  font-size: 24px;
+  margin-top: -30px;
+  margin-bottom: 60px;
+  text-align: center;
+  
+}
+
+
+#reward .reward-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+  max-width: 1200px;
+}
+
+#reward .reward-box {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  padding: 40px 30px;
+  width: 280px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+#reward .reward-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.3);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+#reward .reward-box h3 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+#reward .reward-box .points {
+  font-size: 36px;
+  font-weight: bold;
+  color: #a8d5a3;
+  margin: 20px 0;
+}
+
+#reward .reward-box .description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+  text-align: center;
+}
+
+#reward .reward-info {
+  font-size: 20px;
+  max-width: 1000px;
+  line-height: 1.8;
+  text-align: justify;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  padding: 30px 40px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
 }
 
 section h2 {
@@ -199,5 +350,4 @@ section p, section ol {
 section ol {
   text-align: left;
 }
-
 
