@@ -47,7 +47,7 @@ body {
   text-align: center;
   font-size: 25px;
   padding: 0px 20px;
-  margin-top: -80px;
+  margin-top: -120px;
 }
 
 .navbar ul {
@@ -88,21 +88,25 @@ section {
 
 #about {
   background-color: #ffffff;
+  text-align: justify;
   color: #597d35;
 }
 
 #goal {
   background-color: #337138;
-  color: #4f9e2d;
+  text-align: justify;
+  color: #ffffff;
 }
 
 #instructions {
   background-color: #e8f5e9;
+  text-align: justify;
   color: #2e7d32;
 }
 
 #reward {
   background-color: #597d35;
+  text-align: justify;
   color: azure;
 }
 
