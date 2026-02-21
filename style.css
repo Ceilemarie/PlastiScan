@@ -12,6 +12,7 @@ body {
   padding: 0;
 }
 
+/* navigation bar */
 .navbar {
   position: fixed;
   top: 0;
@@ -61,6 +62,7 @@ body {
   background: rgba(255, 255, 255, 0.2);
   color: #fff;
 }
+/* sections */
 section {
   padding: 100px 20px;
   min-height: 100vh;
@@ -70,6 +72,7 @@ section {
   align-items: center;
 }
 
+/* home section */
 #home{
   color:azure;
   text-align: center;
@@ -94,6 +97,7 @@ section {
   margin-top: -89px;
 }
 
+/* about us section */
 #about {
   background-color: #ffffff;
   text-align: justify;
@@ -123,6 +127,8 @@ section {
   box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.3);
   background: rgba(255, 255, 255, 0.25);
 }
+
+/* our goal section */
 #goal {
   background-color: #337138;
   text-align: justify;
@@ -150,6 +156,8 @@ section {
   box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.3);
   background: rgba(255, 255, 255, 0.25);
 }
+
+/* instructions/ step section */
 
 #instructions {
   background-color: #e8f5e9;
@@ -215,7 +223,7 @@ section {
   max-width: calc(100% - 300px);
 }
 
-/*slide animations for staircase */
+/*animations for staircase */
 #instructions li {
   opacity: 0;
   transition: opacity 0.8s ease, transform 0.8s ease;
@@ -259,8 +267,9 @@ section {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
+/* rewards/equivalent of bttles section */
 #reward {
-  background-color: #597d35;
+  background-color: #066448;
   text-align: center;
   color: azure;
 }
@@ -352,5 +361,85 @@ section p, section ol {
 
 section ol {
   text-align: left;
+}
+
+/* points collection section */
+#collect {
+  background-color: #317a62;
+  text-align: center;
+  color: #ffffff;
+}
+#collect h2{
+  margin-top: -180px;
+  font-size: 80px;
+}
+#collect .points-instruct {
+  font-size: 24px;
+  margin-top: -30px;
+  margin-bottom: 60px;
+  text-align: center;
+}
+#collect .input.box {
+  margin-top: 60px;
+}
+#collect .input.box input {
+  padding: 18px 25px;
+  font-size: 20px;
+  border: none;
+  border-radius: 12px;
+  width: 350px;
+  margin-right: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+#collect .input.box button {
+  padding: 18px 40px;
+  font-size: 20px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #2e7d32, #4caf50);
+  color: white;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+#collect .input.box button::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #4caf50, #8bc34a, #cddc39, #ffeb3b, #4caf50);
+  background-size: 400%;
+  border-radius: 12px;
+  z-index: -1;
+  filter: blur(8px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  animation: glowing-border 3s linear infinite;
+}
+
+#collect .input.box button:hover::before {
+  opacity: 1;
+}
+
+#collect .input.box button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+}
+
+@keyframes glowing-border {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
