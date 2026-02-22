@@ -1,5 +1,31 @@
-// Scroll Animation for Instructions - Alternating Left/Right
+// Scroll Animation for About Us Section
 document.addEventListener('DOMContentLoaded', function() {
+  
+  // About Us Section Animation
+  const aboutText = document.querySelector('#about .about-text');
+  const aboutImage = document.querySelector('#about .about-image-wrapper');
+  const aboutSection = document.querySelector('#about');
+  
+  const aboutObserver = new IntersectionObserver(function(entries) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        if (aboutText) aboutText.classList.add('visible');
+        if (aboutImage) aboutImage.classList.add('visible');
+      } else {
+        if (aboutText) aboutText.classList.remove('visible');
+        if (aboutImage) aboutImage.classList.remove('visible');
+      }
+    });
+  }, {
+    threshold: 0.2,
+    rootMargin: '0px'
+  });
+  
+  if (aboutSection) {
+    aboutObserver.observe(aboutSection);
+  }
+  
+  // Scroll Animation for Instructions - Alternating Left/Right
   
   // Get all instruction items
   const instructionItems = document.querySelectorAll('#instructions li');

@@ -94,7 +94,7 @@ section {
   text-align: center;
   font-size: 25px;
   padding: 0px 20px;
-  margin-top: -89px;
+  margin-top: -150px;
 }
 
 /* about us section */
@@ -106,26 +106,106 @@ section {
 #about h2{
   margin-top: -60px;
   font-size: 80px;
+  margin-bottom: 60px;
 }
-#about p {
-  font-size: 30px;
+
+/* About section layout */
+#about .about-container {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  max-width: 1600px;
+  width: 100%;
+  padding: 0 40px;
+}
+
+#about .about-text {
+  flex: 1.2;
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 0.8s ease;
+}
+
+#about .about-text.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+#about .about-text p {
+  font-size: 27px;
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 15px;
-  padding: 50px 80px;
+  padding: 25px 100px;
   color: #2e7d32;
-  max-width: 1100px;
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-
+  margin: 0;
+  width: 100%;
+  line-height: 1.5;
 }
 
-#about p:hover {
+#about .about-text p:hover {
   transform: translateY(-5px);
   box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.3);
   background: rgba(255, 255, 255, 0.25);
+}
+
+/* Image wrapper with layer effect */
+#about .about-image-wrapper {
+  flex: 1.1;
+  position: relative;
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 0.8s ease 0.3s;
+}
+
+#about .about-image-wrapper.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+#about .about-image-wrapper::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: 20px;
+  bottom: 20px;
+  background: linear-gradient(135deg, #597d35, #337138);
+  border-radius: 15px;
+  z-index: -1;
+  opacity: 0.7;
+}
+
+#about .about-image-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: -20px;
+  bottom: -20px;
+  background: linear-gradient(225deg, #2e7d32, #4caf50);
+  border-radius: 15px;
+  z-index: -2;
+  opacity: 0.5;
+}
+
+#about .team-image {
+  width: 100%;
+  max-width: 750px;
+  border-radius: 15px;
+  box-shadow: 0 20px 60px 0 rgba(31, 38, 135, 0.3);
+  display: block;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s ease;
+}
+
+#about .team-image:hover {
+  transform: scale(1.02);
 }
 
 /* our goal section */
