@@ -19,7 +19,7 @@ body {
   left: 0;
   right: 0;
   z-index: 1000;
-  padding: 15px 0;
+  padding: 25px 0;
 }
 
 .headnav {
@@ -51,7 +51,7 @@ body {
 .navbar a {
   text-decoration: none;
   color: rgba(255, 255, 255, 0.95);
-  font-size: 18px;
+  font-size: 20px;
   letter-spacing: 0.6px;
   transition: all 0.3s ease;
   padding: 8px 14px;
@@ -87,7 +87,7 @@ section {
 
 #home h1 {
   font-family: 'Libre Baskerville', serif;
-  font-size: 210px;
+  font-size: 250px;
   animation: fadeInScale 2s ease-out;
   text-shadow: 0 0 20px rgba(255, 255, 255, 0.3),
                0 0 40px rgba(255, 255, 255, 0.2);
@@ -111,7 +111,7 @@ section {
   text-align: center;
   font-size: 25px;
   padding: 0px 20px;
-  margin-top: -150px;
+  margin-top: -190px;
   letter-spacing: 0.5px;
   background: linear-gradient(90deg, 
     #ffffff,
