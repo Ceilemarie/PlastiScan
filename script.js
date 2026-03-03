@@ -31,14 +31,21 @@ document.addEventListener('DOMContentLoaded', function() {
   const instructionItems = document.querySelectorAll('#instructions li');
   const instructionsSection = document.querySelector('#instructions');
   
+  // Flag to prevent observer interference during nav click
+  let isNavClick = false;
+  let animationTimeout = null;
+  
   console.log('Found', instructionItems.length, 'instruction items'); // Debug
   
   function animateInstructions() {
+    // Clear any pending animation
+    if (animationTimeout) {
+      clearTimeout(animationTimeout);
+    }
+    
     instructionItems.forEach((item, index) => {
-     
       item.classList.remove('visible');
       
-  
       setTimeout(() => {
         item.classList.add('visible');
         console.log('Animating item', index + 1);
@@ -60,6 +67,11 @@ document.addEventListener('DOMContentLoaded', function() {
   
   const observer = new IntersectionObserver(function(entries) {
     entries.forEach((entry) => {
+      // Don't trigger if nav click is in progress
+      if (isNavClick) {
+        return;
+      }
+      
       if (entry.isIntersecting) {
         console.log('Instructions section visible - animating');
         animateInstructions();
@@ -79,13 +91,19 @@ document.addEventListener('DOMContentLoaded', function() {
   if (instructionsNavLink) {
     instructionsNavLink.addEventListener('click', function(e) {
       console.log('Instructions nav link clicked');
-     
-      setTimeout(() => {
-        resetInstructions();
+      
+      // Set flag to prevent observer interference
+      isNavClick = true;
+      resetInstructions();
+      
+      // Wait for smooth scroll to complete, then animate
+      animationTimeout = setTimeout(() => {
+        animateInstructions();
+        // Reset flag after animation starts
         setTimeout(() => {
-          animateInstructions();
-        }, 100);
-      }, 800);
+          isNavClick = false;
+        }, 500);
+      }, 1000);
     });
   }
   
