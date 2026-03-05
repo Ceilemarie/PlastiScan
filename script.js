@@ -107,4 +107,44 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
   
+  // Points Calculation Functionality
+  const bottle350Input = document.getElementById('bottle350');
+  const bottle500Input = document.getElementById('bottle500');
+  const bottle1000Input = document.getElementById('bottle1000');
+  const calculateBtn = document.getElementById('calculatePoints');
+  const pointsDisplay = document.getElementById('pointsDisplay');
+  
+  if (calculateBtn && bottle350Input && bottle500Input && bottle1000Input && pointsDisplay) {
+    calculateBtn.addEventListener('click', function() {
+      // Get values and convert to numbers
+      const count350 = parseInt(bottle350Input.value) || 0;
+      const count500 = parseInt(bottle500Input.value) || 0;
+      const count1000 = parseInt(bottle1000Input.value) || 0;
+      
+      // Calculate total points
+      const totalPoints = (count350 * 1) + (count500 * 1.5) + (count1000 * 2);
+      
+      // Display the total points in gold
+      if (totalPoints > 0) {
+        pointsDisplay.textContent = totalPoints + ' pts';
+        pointsDisplay.classList.add('show');
+      } else {
+        pointsDisplay.textContent = 'Please enter bottle counts';
+        pointsDisplay.classList.add('show');
+        setTimeout(() => {
+          pointsDisplay.classList.remove('show');
+        }, 3000);
+      }
+    });
+    
+    // Allow Enter key to calculate from any input field
+    [bottle350Input, bottle500Input, bottle1000Input].forEach(input => {
+      input.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+          calculateBtn.click();
+        }
+      });
+    });
+  }
+  
 });

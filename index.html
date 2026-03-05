@@ -99,12 +99,31 @@
 
 <section id="collect">
     <h2>Points</h2>
-    <p class="points-instruct">collected points...</p>
+    <p class="points-instruct">Enter the number of bottles you recycled:</p>
 
-    <div class="input box">
-        <input type="text" id="pointsInput" placeholder="bottle count">
-        <button id="checkPoints">Check Points</button>
-
+    <div class="bottle-inputs">
+        <div class="bottle-input-group">
+            <label>350 mL Bottles</label>
+            <input type="number" id="bottle350" min="0" value="0" placeholder="0">
+            <span class="bottle-points">1 pt each</span>
+        </div>
+        
+        <div class="bottle-input-group">
+            <label>500 mL Bottles</label>
+            <input type="number" id="bottle500" min="0" value="0" placeholder="0">
+            <span class="bottle-points">1.5 pts each</span>
+        </div>
+        
+        <div class="bottle-input-group">
+            <label>1000 mL Bottles</label>
+            <input type="number" id="bottle1000" min="0" value="0" placeholder="0">
+            <span class="bottle-points">2 pts each</span>
+        </div>
+    </div>
+    
+    <button id="calculatePoints" class="calculate-btn">Calculate Total Points</button>
+    
+    <div id="pointsDisplay" class="points-display"></div>
 
   </section>
 
